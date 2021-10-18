@@ -1,0 +1,25 @@
+#wrap {
+	width:1200px;
+	height:800px;
+	margin:auto;
+}
+
+header {
+	height:70px;
+	
+}
+
+footer {
+	height:40px;
+}
+
+.login-box {
+	width:400px;
+	height:800px;
+}
+
+.category {
+	width:100px;
+	height:80px;
+	font-size:30px;
+}
