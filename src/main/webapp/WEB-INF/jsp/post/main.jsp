@@ -17,15 +17,7 @@
 <body>
 <div id="wrap">
 	<c:import url="/WEB-INF/jsp/include/header.jsp" />
-	
-	<div class="d-flex justify-content-center">
-		<div class="category"><a href="#">학원</a></div>
-		<div class="category"><a href="#">과외</a></div>
-		<div class="category"><a href="#">학교</a></div>
-		<div class="category"><a href="#">건강</a></div>
-		<div class="category"><a href="#">수다</a></div>
-	</div>
-	
+	<c:import url="/WEB-INF/jsp/include/board.jsp" />
 	<section>
 		<div>
 			<div>학원방</div><br>
