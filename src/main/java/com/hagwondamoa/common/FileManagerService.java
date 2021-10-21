@@ -11,14 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileManagerService {
 	
 	//수정 될일도 없고 수정 되어서는 안되는 곳에는 final과 변수이름을 대문자로 만든다.
-<<<<<<< HEAD
+
 		public final static String FILE_UPLOAD_PATH ="D:\\웹개발 평일 1시_최원제\\springTest\\upload\\images/";
 		//userId를 전달 요청							"D:\\웹개발 평일 1시_최원제\\springTest\\upload\\images/"
 		//C:\\Users\\JE\\OneDrive\\바탕 화면\\Marondal\\springTest\\upload2\\images/
-=======
-		public final static String FILE_UPLOAD_PATH ="C:\\Users\\JE\\OneDrive\\바탕 화면\\Marondal\\springTest\\upload2\\images/";
-		//userId를 전달 요청							"D:\\웹개발 평일 1시_최원제\\springTest\\upload\\images/"
->>>>>>> b15e3e0f47d0ae46030bc34bff71ffe34b8b590e
 		public static String saveFile(int userId, MultipartFile file) {
 			// 파일 경로
 			// 1. 올린 사람의 id로 구분해서 저장
