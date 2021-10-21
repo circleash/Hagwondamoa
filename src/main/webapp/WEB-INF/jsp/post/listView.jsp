@@ -29,6 +29,7 @@
 							<tr>
 								<th>번호</th>
 								<th>작성자</th>
+								<th>내용</th>
 								<th>시간</th>
 							</tr>
 						
@@ -37,7 +38,8 @@
 							<c:forEach var="post" items="${postList }">
 							<tr>
 								<td>${post.id }</td>
-								<td><a href="/post/detail_view?id=${post.id }">${post.userName }</a></td>
+								<td>${post.userName }(${post.userSchool }) / ${post.isWho}</td>
+								<td><a href="/post/detail_view?id=${post.id }">${post.content }</a></td>
 								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 							</tr>
 							</c:forEach>

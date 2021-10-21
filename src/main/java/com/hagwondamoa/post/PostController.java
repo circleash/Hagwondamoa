@@ -37,13 +37,25 @@ public class PostController {
 	public String listView(
 			@RequestParam("category") String category
 			, Model model) {
-		//세션의 userId를 저장하는 과정
-		//userId를 토대로 BO DAO Mapper를 통해 다시 BO로 오는 과정으로 정보를 가져와 List형태로 담아준다.
+		
+		
 		List<Post>postList = postBO.getPostList(category);
 		
 		model.addAttribute("postList", postList);
 		
 		return "post/listView";
+	}
+	
+	@GetMapping("/detail_view")
+	public String detailView(
+			@RequestParam("id") int id
+			, Model model) {
+		
+		Post post = postBO.getPost(id);
+		
+		model.addAttribute("post", post);
+		
+		return "post/detailView";
 	}
 
 }

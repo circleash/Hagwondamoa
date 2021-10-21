@@ -34,5 +34,10 @@ public class PostBO {
 	public List<Post> getPostList(String category) {
 		return postDAO.selectPostList(category);
 }
-
+	public Post getPost(int id) {
+		return postDAO.selectPost(id);
+	}
+	
 }
+
+

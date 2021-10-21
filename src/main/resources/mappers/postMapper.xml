@@ -50,4 +50,25 @@
  		ORDER BY `id` DESC
  			
  	</select>
+ 	
+ 	<select id="selectPost" resultType="com.hagwondamoa.post.model.Post"
+ 	parameterType="integer">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `isWho`
+ 			, `userName`
+ 			, `userSchool`
+ 			, `category`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`id` = #{id}
+ 		
+ 	
+ 	</select>
 </mapper>
