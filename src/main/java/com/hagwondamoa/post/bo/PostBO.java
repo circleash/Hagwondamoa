@@ -38,6 +38,15 @@ public class PostBO {
 		return postDAO.selectPost(id);
 	}
 	
+	public int deletePost(int id, int userId) {
+		
+		Post post = this.getPost(id, userId);
+		
+		if(post.getImagePath() != null) {
+			FileManagerService.removeFile(post.getImagePath());
+		}
+		return postDAO.deletePost(id, userId);
+	}
 }
 
 
