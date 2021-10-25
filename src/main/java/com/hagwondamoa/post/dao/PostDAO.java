@@ -31,7 +31,6 @@ public interface PostDAO {
 	public int updatePost(
 			@Param("id") int id
 			, @Param("userId") int userId
-			, @Param("content") String content
-			, @Param("imagePath") String imagePath);
+			, @Param("content") String content);
 
 }

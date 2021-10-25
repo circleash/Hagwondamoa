@@ -80,4 +80,15 @@
  			`id` = #{id}
  			AND `userId` = #{userId}
  	</delete>
+ 	
+ 	<update id="updatePost" parameterType="map">
+ 		UPDATE
+ 			`post`
+ 		SET
+ 			`content` = #{content}
+ 		WHERE
+ 			`id` = #{id}
+ 			AND `userId` = #{userId}
+ 			
+ 	</update>
 </mapper>

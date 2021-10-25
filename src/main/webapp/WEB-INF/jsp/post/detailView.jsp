@@ -33,8 +33,8 @@
 						<span><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></span>
 					</div>
 				</div>
-				<textarea class="form-control mb-3" rows="5" id="contentInput">${post.content }</textarea>
 				<img src="${post.imagePath }">
+				<textarea class="form-control mb-3" rows="5" id="contentInput">${post.content }</textarea>
 				<div class="d-flex justify-content-between my-3">
 					<div>
 					<a href="/post/list_view?category=${post.category }" class="btn btn-info">목록으로</a>

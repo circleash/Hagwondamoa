@@ -49,8 +49,8 @@ public class PostBO {
 		return postDAO.deletePost(id, userId);
 	}
 	
-	public int updatePost(int id, int userId, String content, String imagePath) {
-		return postDAO.updatePost(id, userId, content, imagePath);
+	public int updatePost(int id, int userId, String content) {
+		return postDAO.updatePost(id, userId, content);
 		
 	}
 }

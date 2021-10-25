@@ -74,14 +74,13 @@ public class PostRestController {
 	public Map<String, String> update(
 			@RequestParam("postId") int postId
 			, @RequestParam("content") String content
-			, @RequestParam("imagePath") String imagePath 
 			, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
 		
 		Map<String, String> result = new HashMap<>();
-		int count = postBO.updatePost(postId, userId, content, imagePath);
+		int count = postBO.updatePost(postId, userId, content);
 		
 		if(count == 0) {
 			result.put("result", "fail");
