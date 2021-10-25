@@ -12,7 +12,7 @@ public class FileManagerService {
 	
 	//수정 될일도 없고 수정 되어서는 안되는 곳에는 final과 변수이름을 대문자로 만든다.
 
-		public final static String FILE_UPLOAD_PATH ="D:\\웹개발 평일 1시_최원제\\springTest\\upload\\images/";
+		public final static String FILE_UPLOAD_PATH ="C:\\Users\\JE\\OneDrive\\바탕 화면\\Marondal\\springTest\\upload2\\images/";
 		//userId를 전달 요청							"D:\\웹개발 평일 1시_최원제\\springTest\\upload\\images/"
 		//C:\\Users\\JE\\OneDrive\\바탕 화면\\Marondal\\springTest\\upload2\\images/
 		public static String saveFile(int userId, MultipartFile file) {
@@ -59,7 +59,7 @@ public class FileManagerService {
 			return "/images/" + directoryName + file.getOriginalFilename();
 			
 		}
-		public void removeFile(String filePath) {
+		public static void removeFile(String filePath) {
 			
 			// 삭제할 파일 경로
 			// filePath : /images/10_21924214/test.png

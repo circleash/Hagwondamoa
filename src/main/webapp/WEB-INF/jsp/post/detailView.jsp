@@ -53,20 +53,14 @@
 <script>
 	$(document).ready(function() {
 		$("#saveBtn").on("click", function() {
-			var title = $("#titleInput").val();
 			var content = $("#contentInput").val().trim();
 			
-			if(title == null || title == "") {
-				alert("제목을 입력하세요");
-				return;
-			} 
 			if(content == null || content == "") {
 				alert("내용을 입력하세요");
 				return;
 			}
 			
 			var formData = new FormData();
-			formData.append("subject", title);
 			formData.append("content", content);
 			formData.append("file", $("#fileInput")[0].files[0]);
 			
@@ -103,7 +97,7 @@
 				data:{"postId":postId},
 				success:function(data) {
 					if(data.result == "success") {
-						location.href="/post/list_view";
+						location.href="/post/main_view";
 					} else {
 						alert("삭제실패");
 					}
@@ -121,7 +115,7 @@
 			$.ajax({
 				type:"post",
 				url:"/post/update",
-				data:{"postId":postId, "subject":$("#titleInput").val(), "content":$("#contentInput").val()},
+				data:{"postId":postId, "content":$("#contentInput").val()},
 				success:function(data) {
 					if(data.result == "success") {
 						alert("수정 성공");

@@ -33,19 +33,25 @@ public class PostBO {
 
 	public List<Post> getPostList(String category) {
 		return postDAO.selectPostList(category);
-}
+	}
+	
 	public Post getPost(int id) {
 		return postDAO.selectPost(id);
 	}
 	
 	public int deletePost(int id, int userId) {
 		
-		Post post = this.getPost(id, userId);
+		Post post = this.getPost(id);
 		
 		if(post.getImagePath() != null) {
 			FileManagerService.removeFile(post.getImagePath());
 		}
 		return postDAO.deletePost(id, userId);
+	}
+	
+	public int updatePost(int id, int userId, String content, String imagePath) {
+		return postDAO.updatePost(id, userId, content, imagePath);
+		
 	}
 }
 

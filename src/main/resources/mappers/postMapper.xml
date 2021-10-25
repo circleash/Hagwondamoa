@@ -52,7 +52,7 @@
  	</select>
  	
  	<select id="selectPost" resultType="com.hagwondamoa.post.model.Post"
- 	parameterType="integer">
+ 	parameterType="int">
  		SELECT
  			`id`
  			, `userId`
@@ -68,7 +68,7 @@
  			`post`
  		WHERE
  			`id` = #{id}
- 		
+
  	
  	</select>
  	
