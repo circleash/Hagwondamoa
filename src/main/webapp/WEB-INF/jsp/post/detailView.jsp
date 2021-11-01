@@ -35,6 +35,41 @@
 				</div>
 				<img src="${post.imagePath }">
 				<textarea class="form-control mb-3" rows="5" id="contentInput">${post.content }</textarea>
+				
+				<div class="m-2">
+							<c:choose>
+								<c:when test="${PostDetail.like }">
+								<a href="#" class="likeBtn" data-post-id="${PostDetail.post.id }">
+									<i class="bi bi-heart-fill heart-icon text-danger"></i>
+								</a>
+								</c:when>
+							<c:otherwise>
+								<a href="#" class="likeBtn" data-post-id="${PostDetail.post.id }">
+									<i class="bi bi-heart heart-icon text-dark"></i>	
+								</a>
+							</c:otherwise>
+							</c:choose>
+					<br>
+						<span>좋아요</span>
+						<span class="middle-size ml-1"> ${PostDetail.likeCount } 명이 좋아합니다. </span>
+				</div>
+				
+				<div class="d-flex">
+						<input type="text" id="commentInput" class="form-control" placeholder="댓글을 작성하세요">
+						<button type="button" id="commentBtn" class="btn btn-success" data-post-id="${post.id }">작성</button>
+				</div>
+				
+				<div class="middle-size m-2">
+					
+						<!-- postDetail안에 commentList가 들어있음  -->
+						<c:forEach var="comment" items="${PostDetail.commentList }">
+							<div class="mt-1">
+								<b>${comment.userName }</b> ${comment.content }
+							</div>
+						</c:forEach>
+					
+				</div>
+				
 				<div class="d-flex justify-content-between my-3">
 					<div>
 					<a href="/post/list_view?category=${post.category }" class="btn btn-info">목록으로</a>
@@ -51,42 +86,36 @@
 </body>
 
 <script>
-	$(document).ready(function() {
-		$("#saveBtn").on("click", function() {
-			var content = $("#contentInput").val().trim();
-			
-			if(content == null || content == "") {
-				alert("내용을 입력하세요");
-				return;
-			}
-			
-			var formData = new FormData();
-			formData.append("content", content);
-			formData.append("file", $("#fileInput")[0].files[0]);
-			
-			$.ajax({
-				enctype:"multipart/form-data", // 파일 업로드 필수
-				processData:false, //파일업로드 필수
-				contentType:false, //파일업로드 필수
-				type:"post",
-				url:"/post/create",
-				data:formData,
-				success:function(data) {
-					if(data.result == "success") {
-						location.href="/post/list_view"
-					} else {
-						alert("삽입실패");
+		$(document).ready(function() {
+			$("#commentBtn").on("click", function() {
+				var postId = $(this).data("post-id");
+				// postId, content
+				
+				//대응되는 input의 value
+				//ex) postId = 5;
+				//"#commentInput-5"
+				//매칭이 되는 방법
+				var content = $("#commentInput-" + postId).val();
+				
+				$.ajax({
+					type:"post",
+					url:"/post/comment/create",
+					data:{"postId":postId, "content":content},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("댓글 작성 실패")
+						}
+						
+					},
+					error:function(e) {
+						alert("error");
 					}
 					
-				},
-				error:function(e) {
-					alert("error");
-				}
-				
-				
+									
+				});
 			});
-			
-		});
 		
 		$("#deleteBtn").on("click", function() {
 			var postId = $(this).data("post-id");

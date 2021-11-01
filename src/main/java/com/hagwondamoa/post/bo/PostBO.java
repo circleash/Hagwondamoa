@@ -7,14 +7,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hagwondamoa.common.FileManagerService;
+import com.hagwondamoa.post.comment.bo.CommentBO;
 import com.hagwondamoa.post.dao.PostDAO;
+import com.hagwondamoa.post.like.bo.LikeBO;
 import com.hagwondamoa.post.model.Post;
 
 @Service
 public class PostBO {
 	
 	@Autowired
+	private LikeBO likeBO;
+	
+	@Autowired
 	private PostDAO postDAO;
+	
+	@Autowired
+	private CommentBO commentBO;
 	
 	public int addPost(int userId, String isWho, String userName, String userSchool, String category, String content, MultipartFile file) {
 		
@@ -53,6 +61,10 @@ public class PostBO {
 		return postDAO.updatePost(id, userId, content);
 		
 	}
+	
+
 }
+	
+	
 
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.hagwondamoa.post.comment.dao.CommentDAO">
+ 	<insert id="insertComment" parameterType="map">
+ 		INSERT INTO `comment`
+ 		(
+ 			`postId`
+ 			, `userId`
+ 			, `isWho` 
+ 			, `userName`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 			) VALUES (
+ 				#{postId}
+ 				, #{userId}
+ 				, #{isWho} 
+ 				, #{userName}
+ 				, #{content}
+ 				, now()
+				, now()
+ 			);
+ 	</insert>
+ 	
+ 	<select id="selectCommentListByPostId" resultType="com.hagwondamoa.post.comment.model.Comment"
+ 	parameterType="int">
+ 		SELECT
+ 			`id`
+ 			, `postId`
+ 			, `userId`
+ 			, `isWho` 
+ 			, `userName`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`comment`
+ 		WHERE
+ 			`postId` = #{postId }
+ 		ORDER BY `id` DESC
+ 	</select>
+ 	
+ 	<delete id="deleteCommentByPostId" parameterType="int">
+		DELETE
+		FROM 
+			`comment`
+		WHERE
+			`postId` = #{postId}
+	</delete>
+ 
+ </mapper>
