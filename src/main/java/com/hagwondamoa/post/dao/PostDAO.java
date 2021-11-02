@@ -21,6 +21,8 @@ public interface PostDAO {
 	
 	public List<Post> selectPostList(@Param("category") String category);
 	
+	public List<Post> selectGroupList(@Param("category") String category);
+	
 	public Post selectPost(
 			 @Param("id") int id); 
 	

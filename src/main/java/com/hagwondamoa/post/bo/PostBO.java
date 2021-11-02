@@ -43,6 +43,10 @@ public class PostBO {
 		return postDAO.selectPostList(category);
 	}
 	
+	public List<Post> getGroupList(String category) {
+		return postDAO.selectGroupList(category);
+	}
+	
 	public Post getPost(int id) {
 		return postDAO.selectPost(id);
 	}

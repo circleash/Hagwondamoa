@@ -13,6 +13,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>     
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
@@ -33,42 +34,42 @@
 						<span><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></span>
 					</div>
 				</div>
-				<img src="${post.imagePath }">
+				<div class="d-flex justify-content-center mt-3 mb-3">
+				<img src="${post.imagePath }" width=400px height=300px>
+				</div>
 				<textarea class="form-control mb-3" rows="5" id="contentInput">${post.content }</textarea>
 				
 				<div class="m-2">
+					
 							<c:choose>
-								<c:when test="${PostDetail.like }">
-								<a href="#" class="likeBtn" data-post-id="${PostDetail.post.id }">
+								<c:when test="${like }">
+								<a href="#" class="likeBtn" data-post-id="${post.id }">
 									<i class="bi bi-heart-fill heart-icon text-danger"></i>
 								</a>
 								</c:when>
 							<c:otherwise>
-								<a href="#" class="likeBtn" data-post-id="${PostDetail.post.id }">
+								<a href="#" class="likeBtn" data-post-id="${post.id }">
 									<i class="bi bi-heart heart-icon text-dark"></i>	
 								</a>
 							</c:otherwise>
 							</c:choose>
 					<br>
 						<span>좋아요</span>
-						<span class="middle-size ml-1"> ${PostDetail.likeCount } 명이 좋아합니다. </span>
+						<span class="middle-size ml-1"> ${likeCount } 명이 좋아합니다. </span>
 				</div>
+				
+				<c:forEach var="comment" items="${commentList }">
+							<div class="mt-1">
+								<b>${comment.userName }</b> ${comment.content }
+							</div>
+				</c:forEach>
+				
 				
 				<div class="d-flex">
 						<input type="text" id="commentInput" class="form-control" placeholder="댓글을 작성하세요">
 						<button type="button" id="commentBtn" class="btn btn-success" data-post-id="${post.id }">작성</button>
 				</div>
 				
-				<div class="middle-size m-2">
-					
-						<!-- postDetail안에 commentList가 들어있음  -->
-						<c:forEach var="comment" items="${PostDetail.commentList }">
-							<div class="mt-1">
-								<b>${comment.userName }</b> ${comment.content }
-							</div>
-						</c:forEach>
-					
-				</div>
 				
 				<div class="d-flex justify-content-between my-3">
 					<div>
@@ -95,7 +96,7 @@
 				//ex) postId = 5;
 				//"#commentInput-5"
 				//매칭이 되는 방법
-				var content = $("#commentInput-" + postId).val();
+				var content = $("#commentInput").val();
 				
 				$.ajax({
 					type:"post",
@@ -116,6 +117,34 @@
 									
 				});
 			});
+		
+			$(".likeBtn").on("click", function(e) {
+				e.preventDefault();
+				<%--
+				#태그가 다른곳으로 가지 않게끔 처리
+				--%>
+				
+				var postId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/post/like",
+					data:{"postId":postId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("좋아요 실패");
+						}
+						
+					},
+					error:function(e) {
+						alert("error");
+					}
+				
+			});
+			
+		});
 		
 		$("#deleteBtn").on("click", function() {
 			var postId = $(this).data("post-id");

@@ -51,6 +51,27 @@
  			
  	</select>
  	
+ 	<select id="selectGroupList" resultType="com.hagwondamoa.post.model.Post"
+ 	parameterType="string">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `isWho`
+ 			, `userName`
+ 			, `userSchool`
+ 			, `category`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`category` = #{category}
+ 		ORDER BY `id` DESC limit 2
+ 			
+ 	</select>
+ 	
  	<select id="selectPost" resultType="com.hagwondamoa.post.model.Post"
  	parameterType="int">
  		SELECT
