@@ -19,39 +19,48 @@
 <div id="wrap">
 	<c:import url="/WEB-INF/jsp/include/header.jsp" />
 	<c:import url="/WEB-INF/jsp/include/board.jsp" />
-	<section>
-		<div>
-			<div>학원게시판 최근 글</div>
+	<section class="container w-auto h-100">
+		<div class="align-self-center justify-content-center">
+			<div class="mt-3">
+			<p style="font-size:150%">학원게시판 최근 글</p>
 			<c:forEach var="hagwon" items="${hagwonList }">
 						<div class="mt-1">
 							<b>${hagwon.userName }</b><a href="/post/detail_view?id=${hagwon.id }"> ${hagwon.content }</a>
 						</div>
 			</c:forEach>
-			<div>과외게시판 최근 글</div>
+			</div>
+			<div class="mt-3">
+			<p style="font-size:150%">과외게시판 최근 글</p>
 			<c:forEach var="tutoring" items="${tutoringList }">
 						<div class="mt-1">
 							<b>${tutoring.userName }</b><a href="/post/detail_view?id=${tutoring.id }"> ${tutoring.content }</a>
 						</div>
 			</c:forEach>
-			<div>학교게시판 최근 글</div>
+			</div>
+			<div class="mt-3">
+			<p style="font-size:150%">학교게시판 최근 글</p>
 			<c:forEach var="school" items="${schoolList }">
 						<div class="mt-1">
 							<b>${school.userName }</b><a href="/post/detail_view?id=${school.id }"> ${school.content }</a>
 						</div>
 			</c:forEach>
-			<div>건강게시판 최근 글</div>
+			</div>
+			<div class="mt-3">
+			<p style="font-size:150%">건강게시판 최근 글</p>
 			<c:forEach var="health" items="${healthList }">
 						<div class="mt-1">
 							<b>${health.userName }</b><a href="/post/detail_view?id=${health.id }"> ${health.content }</a>
 						</div>
 			</c:forEach>
-			<div>수다게시판 최근 글</div>
+			</div>
+			<div class="mt-3">
+			<p style="font-size:150%">수다게시판 최근 글</p>
 			<c:forEach var="talking" items="${talkingList }">
 						<div class="mt-1">
 							<b>${talking.userName }</b><a href="/post/detail_view?id=${talking.id }"> ${talking.content }</a>
 						</div>
 			</c:forEach>
-			
+			</div>
 		</div>
 	</section>	
 	

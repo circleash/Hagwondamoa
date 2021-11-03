@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center mt-3 mb-3">
-				<img src="${post.imagePath }" width=400px height=300px>
+				<img src="${post.imagePath }">
 				</div>
 				<textarea class="form-control mb-3" rows="5" id="contentInput">${post.content }</textarea>
 				
