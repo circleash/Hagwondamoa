@@ -6,30 +6,30 @@
 👩‍🏫 포트폴리오<br>
 포트폴리오<br>
 
-🛠 설계
-UI 기획
-https://ovenapp.io/project/ND6qfRvacPPewaCzojZTCSZqGWa81PNX#qpje9
+🛠 설계<br>
+UI 기획<br>
+https://ovenapp.io/project/ND6qfRvacPPewaCzojZTCSZqGWa81PNX#qpje9<br>
 
-데이터 베이스, URL 설계
-https://docs.google.com/spreadsheets/d/1jeIryT1_uewoSoQOm3Qvb_E-jTYnhKdNBTz2iB2GbdY/edit#gid=0
+데이터 베이스, URL 설계<br>
+https://docs.google.com/spreadsheets/d/1jeIryT1_uewoSoQOm3Qvb_E-jTYnhKdNBTz2iB2GbdY/edit#gid=0<br>
 
-⛏ 주요기능
-회원가입
-package : com.hagwondamoa.user.*
-view : /webapp/WEB-INF/jsp/user/*
+⛏ 주요기능<br>
+회원가입<br>
+package : com.hagwondamoa.user.*<br>
+view : /webapp/WEB-INF/jsp/user/*<br>
 
-로그인
-package : com.hagwondamoa.user.*
-view : /webapp/WEB-INF/jsp/user/*
+로그인<br>
+package : com.hagwondamoa.user.*<br>
+view : /webapp/WEB-INF/jsp/user/*<br>
 
-이미지 첨부 글쓰기
-package : com.hagwondamoa.post.*
-view : /webapp/WEB-INF/jsp/post/*
+이미지 첨부 글쓰기<br>
+package : com.hagwondamoa.post.*<br>
+view : /webapp/WEB-INF/jsp/post/*<br>
 
-댓글
-package : com.hagwondamoa.comment.*
-view : /webapp/WEB-INF/jsp/post/*
+댓글<br>
+package : com.hagwondamoa.comment.*<br>
+view : /webapp/WEB-INF/jsp/post/*<br>
 
-좋아요
-package : com.hagwondamoa.post.like.*
-view : /webapp/WEB-INF/jsp/post/*
+좋아요<br>
+package : com.hagwondamoa.post.like.*<br>
+view : /webapp/WEB-INF/jsp/post/*<br>
