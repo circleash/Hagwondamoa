@@ -16,20 +16,20 @@ https://docs.google.com/spreadsheets/d/1jeIryT1_uewoSoQOm3Qvb_E-jTYnhKdNBTz2iB2G
 ⛏ 주요기능<br>
 회원가입<br>
 package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/user">com.hagwondamoa.user.*<br></a>
-view : /webapp/WEB-INF/jsp/user/*<br>
+view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/user">/webapp/WEB-INF/jsp/user/*<br></a>
 
 로그인<br>
-package : com.hagwondamoa.user.*<br>
-view : /webapp/WEB-INF/jsp/user/*<br>
+package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/user">com.hagwondamoa.user.*<br></a>
+view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/user">/webapp/WEB-INF/jsp/user/*<br></a>
 
 이미지 첨부 글쓰기<br>
-package : com.hagwondamoa.post.*<br>
-view : /webapp/WEB-INF/jsp/post/*<br>
+package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/post">com.hagwondamoa.post.*<br></a>
+view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/post">/webapp/WEB-INF/jsp/post/*<br></a>
 
 댓글<br>
-package : com.hagwondamoa.comment.*<br>
-view : /webapp/WEB-INF/jsp/post/*<br>
+package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/post/comment">com.hagwondamoa.comment.*<br></a>
+view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/post">/webapp/WEB-INF/jsp/post/*<br></a>
 
 좋아요<br>
-package : com.hagwondamoa.post.like.*<br>
-view : /webapp/WEB-INF/jsp/post/*<br>
+package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/post/like">com.hagwondamoa.post.like.*<br></a>
+view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/post">/webapp/WEB-INF/jsp/post/*<br></a>
