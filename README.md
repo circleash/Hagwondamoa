@@ -15,7 +15,7 @@ https://docs.google.com/spreadsheets/d/1jeIryT1_uewoSoQOm3Qvb_E-jTYnhKdNBTz2iB2G
 
 ⛏ 주요기능<br>
 회원가입<br>
-package : com.hagwondamoa.user.*<br>
+package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/user">com.hagwondamoa.user.*<br></a>
 view : /webapp/WEB-INF/jsp/user/*<br>
 
 로그인<br>
