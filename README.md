@@ -33,3 +33,17 @@ view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/w
 좋아요<br>
 package : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/java/com/hagwondamoa/post/like">com.hagwondamoa.post.like.*<br></a>
 view : <a href="https://github.com/circleash/Hagwondamoa/tree/develop/src/main/webapp/WEB-INF/jsp/post">/webapp/WEB-INF/jsp/post/*<br></a>
+
+✏ 외부 라이브러리 라이센스 ✏
+Tomcat Apache License 2.0
+Mysql GPLv2 or proprietary
+Spring framework Apache License 2.0
+Mybatis Apache License 2.0
+Bootstrap MIT License
+jQuery MIT License
+이미지 출처 : pixabay<br>
+
+🎁 향후 계획<br>
+개인 프로필 기능 추가<br>
+팔로우, 팔로워 기능 추가<br>
+사진 여러개 추가 기능<br>
